@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login and Signup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+        <p>Don't have an account? <a href="#" onclick="showSignupScreen()">Sign Up</a></p>
+
+        <!-- Hidden Signup Form -->
+        <div id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <form>
+                <div>
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Enter your password">
+                </div>
+                <div>
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <button type="button" onclick="signup()">Sign Up</button>
+            </form>
+            <p id="signupMessage"></p>
+            <p>Already have an account? <a href="#" onclick="showLoginScreen()">Login</a></p>
+        </div>
+
+        <!-- Hidden Admin Panel -->
+        <div id="adminPanel" style="display: none;">
+            <h2 style="color: pink;">Welcome to Foodpanda</h2>
+            <h3>Registered Restaurants and Customers</h3>
+            <div id="users-list"></div>
+        </div>
+
+        <!-- Hidden Customer Panel -->
+        <div id="customerPanel" style="display: none;">
+            <h2>Welcome, Customer!</h2>
+            <h3>Available Restaurants</h3>
+            <div id="restaurant-list"></div>
+            <h3>Your Cart</h3>
+            <div id="cart">
+                <p>No items in cart</p>
+            </div>
+            <button id="place-order-btn" onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
